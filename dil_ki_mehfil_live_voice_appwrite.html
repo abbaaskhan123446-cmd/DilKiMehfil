@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#241044">
+<title>دل کی محفل — لائیو وائس روم</title>
+<style>
+:root{--bg:#130b20;--panel:#211331;--panel2:#2e1b42;--pink:#ff5b9d;--gold:#ffd36a;--text:#fff7ff;--muted:#cbbbd7;--green:#62e6b4;--line:#654477}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#382052 0,#130b20 58%);color:var(--text);font-family:system-ui,-apple-system,"Noto Nastaliq Urdu","Noto Sans Arabic",sans-serif;min-height:100vh}.wrap{max-width:850px;margin:auto;padding:14px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.brand{font-size:1.3rem;font-weight:800}.sub,.muted{color:var(--muted);font-size:.88rem}.pill{background:#392448;border:1px solid #62436f;border-radius:99px;padding:8px 12px;font-size:.82rem}.hero,.section{background:linear-gradient(135deg,#48215f,#25153b);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 14px 40px #0003;margin-bottom:14px}.roomhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.roomhead h1{font-size:1.3rem;margin:0 0 6px}.live{color:#ff9cba;font-size:.82rem}.count{background:#170d24a8;padding:8px 12px;border-radius:14px;white-space:nowrap}.seats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 16px}.seat{background:#2a1938;border:1px solid #5b3c6a;border-radius:17px;padding:13px 7px;text-align:center;min-height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px}.avatar{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ff83b7,#7849a6);font-size:1.4rem;border:2px solid #ffd5e7}.seat.empty .avatar{background:#453253;border:2px dashed #8f72a2}.seatname{font-weight:700;font-size:.9rem}.seatstatus{font-size:.75rem;color:var(--muted)}.seat.occupied .seatstatus{color:var(--green)}.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.action,button,input{font:inherit}.action,button{border:1px solid #624271;border-radius:13px;background:#352044;color:var(--text);padding:11px 9px;cursor:pointer}.primary{background:linear-gradient(135deg,#ff5b9d,#b63e9b)!important;border:0!important;font-weight:700}.action:disabled,button:disabled{opacity:.45;cursor:not-allowed}.status{padding:11px 12px;background:#180e24;border-radius:12px;margin-top:12px;color:#f6dff7;font-size:.85rem;line-height:1.6;min-height:42px}.section{background:#20132d;box-shadow:none}.section h2{font-size:1.05rem;margin:0 0 12px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:.83rem;color:var(--muted)}input{width:100%;border:1px solid #624271;border-radius:10px;background:#170d24;color:var(--text);padding:11px;direction:ltr;text-align:left}.wide{grid-column:1/-1}.notice{font-size:.82rem;color:var(--muted);line-height:1.7}.room-ui{margin-top:14px;min-height:300px;border-radius:14px;overflow:hidden;background:#170d24}.room-ui:empty{display:none}.small{font-size:.78rem;color:var(--muted)}.footer{text-align:center;color:#a994b7;font-size:.75rem;padding:10px}.hidden{display:none!important}
+@media(max-width:480px){.wrap{padding:10px}.seats{gap:7px}.seat{min-height:120px;padding:9px 3px}.avatar{width:44px;height:44px}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.controls{gap:6px}.action{font-size:.8rem;padding:10px 4px}.roomhead h1{font-size:1.1rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div><div class="brand">💗 دل کی محفل</div><div class="sub">پانچ مائیک سیٹوں والا لائیو وائس روم</div></div><div class="pill">🎙️ زیادہ سے زیادہ 5 بولنے والے</div></header>
+<main>
+<section class="hero">
+ <div class="roomhead"><div><h1>🌙 محبت بھری محفل</h1><div class="live">● وائس روم</div></div><div class="count">🎙️ <b id="seatCount">0</b>/5</div></div>
+ <div class="seats" id="seats">
+  <div class="seat empty"><div class="avatar">👑</div><div class="seatname">سیٹ 1</div><div class="seatstatus">روم شروع نہیں ہوا</div></div>
+  <div class="seat empty"><div class="avatar">😊</div><div class="seatname">سیٹ 2</div><div class="seatstatus">خالی سیٹ</div></div>
+  <div class="seat empty"><div class="avatar">🌸</div><div class="seatname">سیٹ 3</div><div class="seatstatus">خالی سیٹ</div></div>
+  <div class="seat empty"><div class="avatar">🦋</div><div class="seatname">سیٹ 4</div><div class="seatstatus">خالی سیٹ</div></div>
+  <div class="seat empty"><div class="avatar">⭐</div><div class="seatname">سیٹ 5</div><div class="seatstatus">خالی سیٹ</div></div>
+ </div>
+ <div class="controls"><button class="action primary" id="joinBtn">🎙️ روم میں شامل ہوں</button><button class="action" id="leaveBtn" disabled>↩ روم چھوڑیں</button><button class="action" id="shareBtn">🔗 روم شیئر کریں</button></div>
+ <div id="status" class="status" role="status">شروع کرنے سے پہلے نیچے اپنی Appwrite اور ٹوکن سرور کی معلومات درج کریں اور محفوظ کریں۔</div>
+ <div id="zegoRoot" class="room-ui"></div>
+</section>
+<section class="section">
+ <h2>⚙️ کنکشن کی ترتیبات</h2>
+ <p class="notice">یہ معلومات اسی براؤزر میں محفوظ ہوں گی۔ AppSign، ServerSecret یا Appwrite API Key یہاں مت ڈالیں۔ ZEGOCLOUD ٹوکن آپ کے محفوظ سرور سے آئے گا۔</p>
+ <div class="fields">
+  <div class="field"><label for="appId">ZEGOCLOUD AppID</label><input id="appId" value="1241590671" inputmode="numeric"></div>
+  <div class="field"><label for="tokenUrl">محفوظ Token API کا مکمل URL</label><input id="tokenUrl" placeholder="https://your-server.example.com/token"></div>
+  <div class="field"><label for="endpoint">Appwrite Endpoint</label><input id="endpoint" placeholder="https://REGION.cloud.appwrite.io/v1"></div>
+  <div class="field"><label for="projectId">Appwrite Project ID</label><input id="projectId" placeholder="اپنا Project ID درج کریں"></div>
+  <div class="field"><label for="databaseId">Database ID</label><input id="databaseId" placeholder="اپنا Database ID درج کریں"></div>
+  <div class="field"><label for="collectionId">Rooms Collection ID</label><input id="collectionId" placeholder="roomName فیلڈ والی Collection ID"></div>
+  <div class="field"><label for="displayName">آپ کا نام</label><input id="displayName" placeholder="مثلاً عباس" maxlength="40" dir="auto"></div>
+  <div class="field"><label for="roomName">روم کا نام</label><input id="roomName" value="محبت بھری محفل" maxlength="80" dir="auto"></div>
+ </div>
+ <div class="controls" style="margin-top:12px"><button class="action primary" id="saveBtn">ترتیبات محفوظ کریں</button><button class="action" id="testDbBtn">Appwrite کنکشن چیک کریں</button><button class="action" id="clearBtn">ترتیبات صاف کریں</button></div>
+ <p class="small">Appwrite میں منتخب Collection پر درست read/create permissions ہونی چاہئیں۔ اس فائل میں موجودہ شایری Collection کو تبدیل نہیں کیا جاتا؛ صرف روم ریکارڈ کے لیے roomName فیلڈ استعمال ہوتی ہے۔</p>
+</section>
+<section class="section"><h2>🎁 گفٹس</h2><p class="notice">گفٹس اور کوائنز ابھی شامل نہیں کیے گئے، کیونکہ اصلی کوائنز/ادائیگیوں کے لیے الگ محفوظ ڈیٹابیس اور سرور لاجک درکار ہے۔</p></section>
+</main><div class="footer">دل کی محفل • ZEGOCLOUD + Appwrite integration</div>
+</div>
+<script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const KEYS=['appId','tokenUrl','endpoint','projectId','databaseId','collectionId','displayName','roomName'];
+let zp=null, joined=false, roomID=new URLSearchParams(location.search).get('roomID')||'dil_ki_mehfil_main';
+function say(t){$('status').textContent=t}
+function getConfig(){return Object.fromEntries(KEYS.map(k=>[k,$(k).value.trim()]));}
+function saveConfig(){const c=getConfig();localStorage.setItem('dilKiMehfilConfig',JSON.stringify(c));say('ترتیبات اس براؤزر میں محفوظ ہو گئیں۔ اب Appwrite کنکشن چیک کریں۔')}
+function loadConfig(){try{const c=JSON.parse(localStorage.getItem('dilKiMehfilConfig')||'{}');KEYS.forEach(k=>{if(c[k]!==undefined && c[k]!=='')$(k).value=c[k]})}catch(e){}}
+function validBase(c){return c.endpoint&&c.projectId&&c.databaseId&&c.collectionId}
+function appwriteHeaders(c){return {'Content-Type':'application/json','X-Appwrite-Project':c.projectId,'X-Appwrite-Response-Format':'1.6.0'};}
+function normalizeEndpoint(s){return s.replace(/\/+$/,'')}
+async function testAppwrite(){const c=getConfig();if(!validBase(c)){say('Appwrite کے لیے Endpoint، Project ID، Database ID اور Collection ID درج کریں۔');return false}try{const url=normalizeEndpoint(c.endpoint)+'/databases/'+encodeURIComponent(c.databaseId)+'/collections/'+encodeURIComponent(c.collectionId)+'/documents?queries[]='+encodeURIComponent(JSON.stringify({method:'limit',values:[1]}));const r=await fetch(url,{headers:appwriteHeaders(c)});if(!r.ok){let d='';try{d=(await r.json()).message||''}catch(e){}throw new Error('HTTP '+r.status+(d?' — '+d:''))}say('Appwrite API تک رسائی کامیاب ہے۔ اگر روم ریکارڈ محفوظ نہ ہو تو Collection کی permissions اور roomName فیلڈ چیک کریں۔');return true}catch(e){say('Appwrite کنکشن چیک ناکام: '+e.message+'. Endpoint/IDs، ویب پلیٹ فارم کی CORS ترتیب اور Collection permissions چیک کریں۔');return false}}
+async function saveRoom(c){if(!validBase(c))return;const url=normalizeEndpoint(c.endpoint)+'/databases/'+encodeURIComponent(c.databaseId)+'/collections/'+encodeURIComponent(c.collectionId)+'/documents';const payload={documentId:'unique()',data:{roomName:c.roomName||'محبت بھری محفل'}};const r=await fetch(url,{method:'POST',headers:appwriteHeaders(c),body:JSON.stringify(payload)});if(!r.ok){let d='';try{d=(await r.json()).message||''}catch(e){}throw new Error('Appwrite روم ریکارڈ محفوظ نہ کر سکا: HTTP '+r.status+(d?' — '+d:''))}}
+async function joinRoom(){if(joined)return;const c=getConfig();if(!c.appId||!c.tokenUrl||!c.displayName){say('AppID، محفوظ Token API URL اور اپنا نام درج کریں۔');return}if(!validBase(c)){say('پہلے Appwrite کی چاروں ترتیبات مکمل کریں۔');return}if(!window.ZegoUIKitPrebuilt){say('ZEGOCLOUD SDK لوڈ نہیں ہوا۔ انٹرنیٹ کنکشن چیک کریں۔');return}saveConfig();$('joinBtn').disabled=true;try{say('محفوظ سرور سے ZEGOCLOUD ٹوکن حاصل کیا جا رہا ہے…');const userID='u_'+(crypto.randomUUID?crypto.randomUUID().replace(/-/g,'').slice(0,18):Math.random().toString(36).slice(2,14));const tokenResponse=await fetch(c.tokenUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({userID,roomID,expired_ts:Math.floor(Date.now()/1000)+3600})});if(!tokenResponse.ok)throw new Error('Token API نے HTTP '+tokenResponse.status+' واپس کیا');const td=await tokenResponse.json();if(!td.token)throw new Error('Token API کے جواب میں token فیلڈ موجود نہیں۔ سرور کو {"token":"..."} واپس کرنا چاہیے۔');const kitToken=ZegoUIKitPrebuilt.generateKitTokenForProduction(Number(c.appId),td.token,roomID,userID,c.displayName);zp=ZegoUIKitPrebuilt.create(kitToken);await saveRoom(c);zp.joinRoom({container:$('zegoRoot'),sharedLinks:[{name:'روم لنک',url:location.origin+location.pathname+'?roomID='+encodeURIComponent(roomID)}],scenario:{mode:ZegoUIKitPrebuilt.GroupCall},maxUsers:5,turnOnCameraWhenJoining:false,turnOnMicrophoneWhenJoining:false,showMyCameraToggleButton:false,showCameraToggleButton:false,showScreenSharingButton:false,showTextChat:false,showUserList:true,showRoomTimer:true,layout:'Auto',onJoinRoom:()=>{joined=true;$('joinBtn').disabled=true;$('leaveBtn').disabled=false;say('آپ وائس روم میں شامل ہو گئے ہیں۔ مائیک کی اجازت براؤزر سے دیں۔')},onLeaveRoom:()=>{joined=false;$('joinBtn').disabled=false;$('leaveBtn').disabled=true;$('zegoRoot').innerHTML='';say('آپ نے وائس روم چھوڑ دیا۔')}});say('روم شروع کیا جا رہا ہے… اگر کنکشن نہ بنے تو Token API اور Appwrite permissions چیک کریں۔')}catch(e){say('روم شروع نہیں ہو سکا: '+e.message);$('joinBtn').disabled=false}}
+function leaveRoom(){try{if(zp&&zp.destroy)zp.destroy()}catch(e){}zp=null;joined=false;$('zegoRoot').innerHTML='';$('joinBtn').disabled=false;$('leaveBtn').disabled=true;say('روم چھوڑ دیا گیا۔')}
+$('saveBtn').addEventListener('click',saveConfig);$('testDbBtn').addEventListener('click',testAppwrite);$('joinBtn').addEventListener('click',joinRoom);$('leaveBtn').addEventListener('click',leaveRoom);$('shareBtn').addEventListener('click',async()=>{const url=location.origin+location.pathname+'?roomID='+encodeURIComponent(roomID);try{if(navigator.share)await navigator.share({title:'دل کی محفل',text:'میرے وائس روم میں شامل ہوں',url});else{await navigator.clipboard.writeText(url);say('روم لنک کاپی ہو گیا۔')}}catch(e){say('یہ روم لنک ہے: '+url)}});$('clearBtn').addEventListener('click',()=>{localStorage.removeItem('dilKiMehfilConfig');KEYS.forEach(k=>{if(k==='appId')$(k).value='1241590671';else if(k==='roomName')$(k).value='محبت بھری محفل';else $(k).value=''});say('محفوظ ترتیبات صاف کر دی گئی ہیں۔')});
+loadConfig();
+</script>
+</body>
+</html>
